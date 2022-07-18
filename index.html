@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="ACME UX-UI">
+    <meta name="description" content="ACME STUDIO Landing Page - SS4A">
+    <meta name="keyword" content="ACME, STUDIO, Mobile apps, Web Development">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/homero.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+
+    <title>Adivinador</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="cambiar('v1')"><i class="fa-brands fa-studiovinari me-2"></i>Adivinador</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./compra.html">Código fuente</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-4 ventana v1">
+        <h1 class="mt-2">Hola, voy a tratar de adivinar algúnas palabras que estas pensando...</h1>
+        <img src="./img/homero.svg" alt="img-homero" width="250px">
+        <h4 class="my-2">¿Quieres continuar?</h4>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v2')">Comenzar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v2">
+        <h1>Piensa en un número entre el 1 y el 9 ...</h1>
+        <h5>Ejemplo: El número 6</h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v3')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v3">
+        <h1>Ahora.. a ese número debes multiplicarlo por 9 y sumar sus cifras...</h1>
+        <h3>( Solo si tiene más de una cifra)</h3>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v4')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v4">
+        <h1>Perfecto.. al nuevo resultado vamos a restarlo 5 unidades...</h1>
+        <h5>Ejemplo: si mi nuevo resultado es 8, entonces 8-5=3</h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v5')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v5">
+        <h1>Ya casi.. Vamos a transformar ese ultimo resultado a una letra...</h1>
+        <h3>A=1, B=2, C=3, D=4, E=5 ... Z= 27</h3>
+        <h5>Ejemplo: Si mi resultado es 3, entonces la letra será <strong>C</strong></h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v6')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v6">
+        <h1>Ya falta poco...Ahora piensa en un pais con la inicial de esa letra que obtuviste</h1>
+        <h5>Ejemplo: Si la letra es <strong>C</strong>, entonces podría ser <strong>Colombia</strong></h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v7')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v7">
+        <h1>Ahora que tienes el pais en mente, tienes que pensar en un animal con la inicial de la segunda letra de ese
+            pais</h1>
+        <h5>Ejemplo: Si el pais era C<strong class="text-danger">o</strong>lombia, entonces podría ser
+            <strong>Orangutan</strong></h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v8')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v8">
+        <h1>Ultimo...Ahora piensa en una fruta con la inicial de la tercera letra de ese animal</h1>
+        <h5>Ejemplo: Si el animal era Or<strong class="text-danger">a</strong>ngutan, entonces podría ser
+            <strong>Aguaje</strong></h5>
+        <img src="./img/pensando.svg" alt="img-homero" width="200px">
+        <h3 class="mt-3">¿Ya lo tienes?</h3>
+        <button class="btn btn-lg btn-outline-success" onclick="cambiar('v9')">Continuar</button>
+    </div>
+    <div class="container text-center mt-4 ventana v9">
+        <h1>Felicidades!!</h1>
+        <h1>Si lograste seguir todos los pasos correctamente debiste pensar en esto..</h1>
+        <h3 class="my-3">- Dinamarca, Iguana y Uva</h3>
+        <img src="./img/final.svg" alt="img-homero" width="300px">
+        <a href="./compra.html" class="btn btn-lg btn-outline-success mt-2">Descargar código fuente</a>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

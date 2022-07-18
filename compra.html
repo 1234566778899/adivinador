@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="ACME UX-UI">
+    <meta name="description" content="ACME STUDIO Landing Page - SS4A">
+    <meta name="keyword" content="ACME, STUDIO, Mobile apps, Web Development">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/homero.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+
+    <title>Adivinador</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html" onclick="cambiar('v1')"><i
+                    class="fa-brands fa-studiovinari me-2"></i>Adivinador</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./compra.html">Código fuente</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center"><u>Descargar código fuente</u></h1>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./img/Capturas/1.png" class="d-block w-100" alt="img">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/Capturas/2.png" class="d-block w-100" alt="img">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/Capturas/3.png" class="d-block w-100" alt="img">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 px-5">
+                <h4>Tecnologías utilizadas:</h4>
+                <p>-HTML - Css</p>
+                <p>-JavaScript</p>
+                <p>-Bootstrap 5</p>
+                <p>Precio: <strong class="h1">$0.99</strong></p>
+                <div id="paypal-button-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AcwxE19wcMQuxMa1nFz6D9nxuF1Z6g59JpE9wxb1A1PPWl-Vo3BzvGfZbwop2zlTe_K6yyAdVU2w0611&currency=USD">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        paypal.Buttons({
+            style: {
+                color: 'blue',
+                shape: 'pill',
+                label: 'pay'
+            },
+            createOrder: (data, actions) => {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: 0.99
+                        }
+                    }]
+                });
+            },
+            // Finalize the transaction after payer approval
+            onApprove: (data, actions) => {
+                return actions.order.capture().then(function (orderData) {
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert(
+                        `Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`
+                    );
+                    window.location.href = './img/adivinador.zip'
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+</body>
+
+</html>
